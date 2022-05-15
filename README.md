@@ -1,4 +1,4 @@
-# Instalaciones recomendadas - Curso de Angular
+# Angular
 
 ## Instalaciones Necesarias
 * [Google Chrome](https://www.google.com/chrome/)
@@ -37,7 +37,7 @@ git config --global user.email "Tu correo"
     "#C497D4"
 ],
 ```
-### Tema que estoy usando en VSCode:
+### Tema para VSCode:
 
 * [Monokai Night](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-monokai-night)
 

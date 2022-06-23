@@ -9,6 +9,7 @@ interface Personaje {
     nombre: string;
     hp: number;
     skills: string[];
+    // opcional
     origin?: string;
 }
 

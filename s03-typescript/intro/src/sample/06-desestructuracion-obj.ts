@@ -25,7 +25,7 @@ const reproductor: Reproductor = {
     }
 }
 
-// Destructuracion
+// Desestructuracion
 // const { volumen, segundo, cancion, detalle: { anio, autor: autorDetalle } } = reproductor;
 const { volumen: vol, segundo, cancion, detalle } = reproductor;
 const { autor, anio } = detalle

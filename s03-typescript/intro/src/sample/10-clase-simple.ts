@@ -6,7 +6,7 @@
 class Heroe {
     private alterEgo: string;
     public edad: number;
-    static nombreReal: string;
+    // static nombreReal: string;
 
     imprimirEdad() {
         return this.edad;

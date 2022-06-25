@@ -3,7 +3,7 @@
     ===== Código de TypeScript =====
 */
 
-interface Producto {
+export interface Producto {
     desc: string;
     precio: number;
 }
@@ -19,7 +19,7 @@ const tableta: Producto = {
 }
 
 // Recibe por parametro una coleccion de tipo Producto[]
-function calculaISV( productos: Producto[] ):[number, number] {
+export function calculaISV( productos: Producto[] ):[number, number] {
     let total = 0;
 
     // Cuando es un elemento se usa la interfaz sin arreglo

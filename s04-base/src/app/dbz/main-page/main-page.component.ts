@@ -9,35 +9,28 @@ import { DbzService } from '../services/dbz.service';
 })
 export class MainPageComponent implements OnInit {
 
-  personajes: Personaje[] = [
-    {
-      nombre: 'Goku',
-      poder: 15000
-    },
-    {
-      nombre: 'Vegeta',
-      poder: 7500
-    }
-  ];
-
-  constructor(
-    private dbzService: DbzService
-  ) {}
-
-  ngOnInit(): void {
-  }
-
   nuevo: Personaje = {
     nombre: 'Trunks',
     poder: 120000
   }
 
-  agregarNuevoPersonaje( personaje: Personaje) {
+  // get personajes(): Personaje[] {
+  //   return this.dbzService.personajes;
+  // }
+
+  constructor(
+    // private dbzService: DbzService
+  ) {}
+
+  ngOnInit(): void {
+  }
+
+  // agregarNuevoPersonaje( personaje: Personaje) {
     // console.log( personaje );
     // F5 para debugger en el browser
-    this.personajes.push( personaje );
+    // this.personajes.push( personaje );
     // debugger;
-  }
+  // }
 
   // cambiarNombre( event: any ) {
   //   console.log( event.target.value );

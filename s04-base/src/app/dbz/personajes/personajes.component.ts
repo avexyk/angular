@@ -9,7 +9,10 @@ import { DbzService } from '../services/dbz.service';
 })
 export class PersonajesComponent implements OnInit {
 
-  @Input('personajes') personajes: Personaje[] = [];
+  // @Input('personajes') personajes: Personaje[] = [];
+  get personajes() {
+    return this.dbzService.personajes;
+  }
 
   constructor(
     private dbzService: DbzService

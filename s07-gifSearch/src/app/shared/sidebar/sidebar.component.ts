@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GifsServiceService } from 'src/app/gifs/services/gifs-service.service';
+import { GifsService } from 'src/app/gifs/services/gifs-service.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -13,7 +13,7 @@ export class SidebarComponent implements OnInit {
   }
 
   constructor(
-    private gifsService: GifsServiceService
+    private gifsService: GifsService
   ) { }
 
   ngOnInit(): void {

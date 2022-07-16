@@ -2,8 +2,16 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+const BASE_API = 'https://api.giphy.com/v1/gifs'
+
 export const environment = {
-  production: false
+  production: false,
+  ENDPOINTS: {
+    SEARCH: BASE_API + '/search'
+  },
+  KEYS: {
+    GIFS_API : '',
+  }
 };
 
 /*

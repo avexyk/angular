@@ -22,8 +22,12 @@ export class BusquedaComponent implements OnInit {
   buscar() {
     // Obtener valor del input
     const valor = this.txtBuscar.nativeElement.value;
-    this.gifsService.buscarGifs( valor );
 
+    // No se insertar vacios
+    if ( valor.trim().length === 0) { return; }
+
+    // Guardar historial
+    this.gifsService.buscarGifs( valor );
     // Reiniciar input
     this.txtBuscar.nativeElement.value = "";
   }

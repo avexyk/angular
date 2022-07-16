@@ -16,8 +16,18 @@ export class GifsServiceService {
     return [...this._historial];
   }
 
-  buscarGifs( query: string ) {
-    this._historial.unshift( query );
+  buscarGifs( query: string = '' ) {
+
+    // se considera repetido aunque sea mayusculas o minusculas o espacios agregados
+    query = query.trim().toLocaleLowerCase();
+
+    // inserto valores que no existen
+    if( !this._historial.includes( query ) ) {
+      // inserta ultimo valor como primero
+      this._historial.unshift( query );
+      // limita la cantidad de elementos en el arreglo a 10
+      this._historial = this._historial.splice(0, 10);
+    }
     console.log( this._historial );
   }
 

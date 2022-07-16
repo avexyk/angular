@@ -54,6 +54,12 @@ git config --global user.email "Tu correo"
 
 * [TypeScript importer](https://marketplace.visualstudio.com/items?itemName=pmneo.tsimporter)
 
+### Flags para generar componentes
 
+> ng g c componente --skipTests -is
+
+    --skipTests: No gener archivos de prueba
+    -is: No genera archivo de estilos
+    
 
 

@@ -62,4 +62,8 @@ git config --global user.email "Tu correo"
     -is: No genera archivo de estilos
     
 
+### Datos de interes
+
+* LocalStorage limitaciones de espacion por navegador
+
 

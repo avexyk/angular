@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Gif, SearchGifsResponse } from '../inteface/gifs.inteface';
@@ -30,7 +30,11 @@ export class GifsService {
     // }
 
     // #2 Forma
+    // recuperar el historial de busqueda acumulativo
     this._historial = JSON.parse( localStorage.getItem('historial')! ) || [];
+
+    // recuperar el ultimo resultado de busqueda unico
+    this.resultados = JSON.parse( localStorage.getItem('resultado')! ) || [];
   }
 
   buscarGifs( query: string = '' ) {
@@ -45,7 +49,7 @@ export class GifsService {
       // limita la cantidad de elementos en el arreglo a 10
       this._historial = this._historial.splice(0, 10);
 
-      // guardar en localstorage
+      // guardar busquedas en localstorage
       localStorage.setItem('historial', JSON.stringify( this._historial ));
     }
     // console.log( this._historial );
@@ -63,10 +67,18 @@ export class GifsService {
     // const data = await resp.json();
     // console.log( data );
 
+    // contruccion de parametros
+    const parametros = new HttpParams()
+          .set( 'api_key', this.ENDPOINT_KEY )
+          .set( 'q', query )
+          .set( 'limit', '10' );
+
     // #3 Metodo
-    this.http.get<SearchGifsResponse>(`${ this.ENDPOINT }?api_key=${ this.ENDPOINT_KEY }&q=${ query }&limit=10`)
+    this.http.get<SearchGifsResponse>(`${ this.ENDPOINT }`, { params: parametros } )
         .subscribe( resp => {
           this.resultados = resp.data;
+          // guardar ultimo resultado de busqueda
+          localStorage.setItem('resultado', JSON.stringify( this.resultados ));
         })
 
   }

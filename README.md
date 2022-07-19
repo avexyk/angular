@@ -65,5 +65,6 @@ git config --global user.email "Tu correo"
 ### Datos de interes
 
 * LocalStorage limitaciones de espacion por navegador
+* En pages van los containers
 
 

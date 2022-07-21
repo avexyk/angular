@@ -10,6 +10,7 @@ import { Country } from '../interfaces/pais.interface';
 export class PaisService {
 
   private ENDPOINT_NAME: string = environment.ENDPOINTS.NAME;
+  private ENDPOINT_CAPITAL: string = environment.ENDPOINTS.CAPITAL;
 
   constructor(
     private http: HttpClient
@@ -25,6 +26,10 @@ export class PaisService {
     //                   catchError( err => of([]) )
     //                 );
 
+  }
+
+  buscarCapital( termino: string ): Observable<Country[]> {
+    return this.http.get<Country[]>(`${this.ENDPOINT_CAPITAL}/${ termino }`);
   }
 
 }

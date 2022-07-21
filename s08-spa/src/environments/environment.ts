@@ -8,6 +8,7 @@ export const environment = {
   production: false,
   ENDPOINTS: {
     NAME: BASE_API + '/name',
+    CAPITAL: BASE_API + '/capital',
   },
   KEYS: {
     

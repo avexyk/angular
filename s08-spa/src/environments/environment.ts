@@ -9,6 +9,7 @@ export const environment = {
   ENDPOINTS: {
     NAME: BASE_API + '/name',
     CAPITAL: BASE_API + '/capital',
+    ALPHA: BASE_API + '/alpha',
   },
   KEYS: {
     

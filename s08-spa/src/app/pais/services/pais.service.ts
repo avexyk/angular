@@ -11,6 +11,7 @@ export class PaisService {
 
   private ENDPOINT_NAME: string = environment.ENDPOINTS.NAME;
   private ENDPOINT_CAPITAL: string = environment.ENDPOINTS.CAPITAL;
+  private ENDPOINT_ALPHA: string = environment.ENDPOINTS.ALPHA;
 
   constructor(
     private http: HttpClient
@@ -30,6 +31,10 @@ export class PaisService {
 
   buscarCapital( termino: string ): Observable<Country[]> {
     return this.http.get<Country[]>(`${this.ENDPOINT_CAPITAL}/${ termino }`);
+  }
+
+  getPaisPorAplha( id: string ): Observable<Country> {
+    return this.http.get<Country>(`${this.ENDPOINT_ALPHA}/${ id }`);
   }
 
 }

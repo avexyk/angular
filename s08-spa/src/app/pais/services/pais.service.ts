@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { catchError, Observable, of } from 'rxjs';
+import { Country } from '../interfaces/pais.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,8 @@ export class PaisService {
     private http: HttpClient
   ) { }
 
-  buscarPais( termino:string ): Observable<any> {
-    return this.http.get( `${this.ENDPOINT_NAME}/${ termino }`);
+  buscarPais( termino:string ): Observable<Country[]> {
+    return this.http.get<Country[]>( `${this.ENDPOINT_NAME}/${ termino }`);
     
     // Manejo de errores con rxjs
     // return this.http.get( `${this.ENDPOINT_NAME}/${ termino }`)

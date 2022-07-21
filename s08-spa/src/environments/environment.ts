@@ -2,8 +2,16 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+const BASE_API = 'https://restcountries.com/v3.1';
+
 export const environment = {
-  production: false
+  production: false,
+  ENDPOINTS: {
+    NAME: BASE_API + '/name',
+  },
+  KEYS: {
+    
+  }
 };
 
 /*

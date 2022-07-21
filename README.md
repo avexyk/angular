@@ -66,5 +66,6 @@ git config --global user.email "Tu correo"
 
 * LocalStorage limitaciones de espacion por navegador
 * En pages van los containers
+* Al usar url con href de hace full refresh, se pierde data por todos lados de servicios y se recargan todos los archivos
 
 
